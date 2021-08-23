@@ -13056,6 +13056,20 @@ ul.typeahead-list  > li > a.pull-right {
 .ansi-bold { font-weight: bold; }
 
     </style>
+<style type="text/css">
+    div.CodeMirror,
+div.CodeMirror pre { /*코드 블록*/
+font-family: D2Coding, Consolas;
+font-size: 12pt;
+line-height: 120%;
+}
+.output_result pre { /*출력결과-맨마지막 출력*/
+font-family: D2Coding, Consolas;
+}
+.output_stdout pre { /*출력결과-긴출력, 중간출력*/
+font-family: D2Coding, Consolas;
+}
+    </style>
 
 
 <style type="text/css">
@@ -13135,6 +13149,48 @@ Industrial AI Lab at POSTECH
 <div id="toc"></div>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="0.-Video-Lectures">0. Video Lectures<a class="anchor-link" href="#0.-Video-Lectures">¶</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%html</span> 
+<span class="p">&lt;</span><span class="nt">center</span><span class="p">&gt;&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.youtube.com/embed/KU6SLiDjoX8?rel=0"</span> 
+<span class="na">width</span><span class="o">=</span><span class="s">"560"</span> <span class="na">height</span><span class="o">=</span><span class="s">"315"</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;&lt;/</span><span class="nt">center</span><span class="p">&gt;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+<center><iframe src="https://www.youtube.com/embed/KU6SLiDjoX8?rel=0" width="560" height="315" frameborder="0" allowfullscreen></iframe></center>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13451,7 +13507,7 @@ Epoch 10/10
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_scores</span> <span class="o">=</span> <span class="n">autoencoder</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_imgs</span><span class="p">,</span> <span class="n">test_imgs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_scores</span> <span class="o">=</span> <span class="n">autoencoder</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">test_imgs</span><span class="p">,</span> <span class="n">test_imgs</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Test loss: </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_scores</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Mean Squared Error: </span><span class="si">{}</span><span class="s1"> %'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_scores</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
@@ -13488,7 +13544,7 @@ Mean Squared Error: 2.6499442756175995 %
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Visualize Evaluation on Test Data</span>
 
-<span class="c1">#rand_idx = np.random.randint(1, test_imgs.shape[0])</span>
+<span class="c1"># rand_idx = np.random.randint(1, test_imgs.shape[0])</span>
 <span class="n">rand_idx</span> <span class="o">=</span> <span class="mi">6</span>
 
 <span class="n">test_img</span> <span class="o">=</span> <span class="n">test_imgs</span><span class="p">[</span><span class="n">rand_idx</span><span class="p">]</span>
@@ -13699,10 +13755,10 @@ Mean Squared Error: 2.6499442756175995 %
 
 
 
-<div id="81878e64-ede9-4608-8600-151ab871bbf9"></div>
+<div id="7a37b212-f4d9-4185-90d4-dffdb2495388"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#81878e64-ede9-4608-8600-151ab871bbf9');
+var element = $('#7a37b212-f4d9-4185-90d4-dffdb2495388');
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 
 </script>
