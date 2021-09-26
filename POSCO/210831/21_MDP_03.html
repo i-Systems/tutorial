@@ -13057,7 +13057,18 @@ ul.typeahead-list  > li > a.pull-right {
 
     </style>
 <style type="text/css">
-    .CodeMirror pre {font-family: Consolas; font-size: 14pt; line-height: 140%;}
+    div.CodeMirror,
+div.CodeMirror pre { /*코드 블록*/
+font-family: D2Coding, Consolas;
+font-size: 12pt;
+line-height: 120%;
+}
+.output_result pre { /*출력결과-맨마지막 출력*/
+font-family: D2Coding, Consolas;
+}
+.output_stdout pre { /*출력결과-긴출력, 중간출력*/
+font-family: D2Coding, Consolas;
+}
     </style>
 
 
@@ -13526,22 +13537,29 @@ $$ v_{\pi} (s) \; \leftarrow \; R(s) + \gamma \sum_{s' \in S} P\left(s' \mid s, 
 <li>The optimal state-value functin $v_*(s)$ is the maximum value function over all policies</li>
 </ul>
 <p><br></p>
-$$
-\begin{align*}
-v_*(s) &amp;= \max_{\pi} v_{\pi}(s) \\
-&amp; = \max_a q_{\pi}(s,a) \\
-&amp; = \max_a \left( R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) v_{\pi}(s') \right)\\
-&amp; = R(s) + \gamma \max_a \sum_{s' \in S} P(s' \mid s,a) v_{\pi}(s')
-\end{align*}$$<p><br></p>
+$$v_*(s) = \max_{\pi} v_{\pi}(s)$$<p><br></p>
 <ul>
 <li>The optimal action-value functin $q_*(s,a)$ is the maximum action-value function over all policies</li>
 </ul>
 <p><br></p>
+$$q_*(s,a) = \max_{\pi} q_{\pi}(s,a)$$<p><br></p>
+<ul>
+<li>Bellman Optimality Equations</li>
+</ul>
+<p><br></p>
+$$
+\begin{align*}
+v_*(s) &amp;= \max_a q_{*}(s,a) \\
+&amp; = \max_a \left( R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) v_{*}(s') \right)\\
+&amp; = R(s) + \gamma \max_a \sum_{s' \in S} P(s' \mid s,a) v_{*}(s')
+\end{align*}$$<p><br></p>
 $$
 \begin{align*}
 q_*(s,a) &amp;= \max_{\pi} q_{\pi}(s,a) \\
 &amp; =  \max_{\pi} \left( R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) v_{\pi}(s') \right) \\
-&amp; = R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) \max_{\pi} v_{\pi}(s') 
+&amp; = R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) \max_{\pi} v_{\pi}(s') \\
+&amp; = R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) v_{*}(s') \\
+&amp; = R(s) + \gamma \sum_{s' \in S} P(s' \mid s,a) \max_{a'} q_{*}(s',a')
 \end{align*}
 $$<p><br></p>
 <h3 id="2.3.2.-Optimal-Policy">2.3.2. Optimal Policy<a class="anchor-link" href="#2.3.2.-Optimal-Policy">¶</a></h3><ul>
@@ -14536,10 +14554,10 @@ $$\sum_{s' \in S} p\left(s\ \mid s,a\right) \;v \left(s' \right)$$
 
 
 
-<div id="a98b7b98-603e-406b-88c7-3ae01b59edca"></div>
+<div id="2f3eba26-123b-42fb-b176-da6a22d15d4e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a98b7b98-603e-406b-88c7-3ae01b59edca');
+var element = $('#2f3eba26-123b-42fb-b176-da6a22d15d4e');
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 
 </script>
