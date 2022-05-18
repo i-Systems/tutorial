@@ -12947,8 +12947,13 @@ ul.typeahead-list  > li > a.pull-right {
 /*# sourceMappingURL=style.min.css.map */
     </style>
 <style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
@@ -13055,20 +13060,6 @@ ul.typeahead-list  > li > a.pull-right {
 
 .ansi-bold { font-weight: bold; }
 
-    </style>
-<style type="text/css">
-    div.CodeMirror,
-div.CodeMirror pre { /*코드 블록*/
-font-family: D2Coding, Consolas;
-font-size: 12pt;
-line-height: 120%;
-}
-.output_result pre { /*출력결과-맨마지막 출력*/
-font-family: D2Coding, Consolas;
-}
-.output_stdout pre { /*출력결과-긴출력, 중간출력*/
-font-family: D2Coding, Consolas;
-}
     </style>
 
 
@@ -13322,32 +13313,19 @@ $$u(t) = \frac{1}{2\pi}\sin2\pi t + 1$$</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.2.0.-Setup">3.2.0. Setup<a class="anchor-link" href="#3.2.0.-Setup">¶</a></h3><ul>
-<li>Using tensorFlow 2</li>
+<li>Using PyTorch</li>
 </ul>
 <ul>
-<li><strong>Install and Setup</strong> <ul>
-<li>TensorFlow &gt;= 2.2.0 and TensorFlow Probability &gt;= 0.10.0</li>
-<li>If you have TensorFlow 2.2.0, TensorFlow Probability == 0.10.0 should be installed<br>
-   (TensorFlow 2.3.0 matches with TensorFlow Probability 0.11.0 and so on)</li>
+<li><strong>Setup</strong> <ul>
+<li>ipynb files are made up of the following versions</li>
+<li>PyTorch 1.10.0</li>
+<li>DeepXDE 1.2.0</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># !pip install tensorflow-probability</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13971,10 +13949,10 @@ Best model at step 6000:
 
 
 
-<div id="dedfc986-b749-46c9-a76c-01a1dcbaf58c"></div>
+<div id="26c20674-45eb-4a26-9410-1f307d6aea97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dedfc986-b749-46c9-a76c-01a1dcbaf58c');
+var element = $('#26c20674-45eb-4a26-9410-1f307d6aea97');
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 
 </script>
