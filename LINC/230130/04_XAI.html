@@ -13018,25 +13018,57 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    div.CodeMirror,
- 
-div.CodeMirror pre { 
- font-family: D2Coding, Consolas;
- font-size: 14pt;
- line-height: 120%;
- 
-}
- 
-.output_result pre { /*출력결과-맨마지막 출력*/
- font-family: D2Coding, Consolas;
- font-size: 12pt;
-}
- 
-.output_stdout pre { /*출력결과-긴출력, 중간출력*/
- font-family: D2Coding, Consolas;
- font-size: 12pt;
-}
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
+.ansi-bold { font-weight: bold; }
+
+    </style>
+<style type="text/css">
+    div.CodeMirror,
+div.CodeMirror pre { /*코드 블록*/
+font-family: D2Coding, Consolas;
+font-size: 12pt;
+line-height: 120%;
+}
+.output_result pre { /*출력결과-맨마지막 출력*/
+font-family: D2Coding, Consolas;
+}
+.output_stdout pre { /*출력결과-긴출력, 중간출력*/
+font-family: D2Coding, Consolas;
+}
     </style>
 
 
@@ -13283,7 +13315,7 @@ Industrial AI Lab at POSTECH
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.-Build-and-Predict-Machine-Learning-and-Deep-Learning-Models">2. Build and Predict Machine Learning and Deep Learning Models<a class="anchor-link" href="#2.-Build-and-Predict-Machine-Learning-and-Deep-Learning-Models">¶</a></h1><h2 id="2.1.-Data-Description">2.1. Data Description<a class="anchor-link" href="#2.1.-Data-Description">¶</a></h2><ul>
+<h1 id="3.-Build-and-Predict-Machine-Learning-and-Deep-Learning-Models">3. Build and Predict Machine Learning and Deep Learning Models<a class="anchor-link" href="#3.-Build-and-Predict-Machine-Learning-and-Deep-Learning-Models">¶</a></h1><h2 id="3.1.-Data-Description">3.1. Data Description<a class="anchor-link" href="#3.1.-Data-Description">¶</a></h2><ul>
 <li>Injection molding dataset consisting of 36 mold shapes</li>
 <li>This dataset consists of 5 process features (control parameters), 32 mold shape features, and the weight of the molded part (ground truth).</li>
 </ul>
@@ -13297,7 +13329,9 @@ Industrial AI Lab at POSTECH
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'/content/drive/MyDrive/linc/data_files/train_dataset.xlsx'</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">engine</span> <span class="o">=</span> <span class="s1">'openpyxl'</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">'/content/drive/MyDrive/linc/data_files/train_dataset.xlsx'</span><span class="p">,</span> 
+                        <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
+                        <span class="n">engine</span> <span class="o">=</span> <span class="s1">'openpyxl'</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13833,7 +13867,7 @@ test_x: (1050, 37), test_y: (1050,)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-XAI-with-Machine-Learning">3. XAI with Machine Learning<a class="anchor-link" href="#3.-XAI-with-Machine-Learning">¶</a></h1><h2 id="3.1.--RandomForest-Model">3.1.  RandomForest Model<a class="anchor-link" href="#3.1.--RandomForest-Model">¶</a></h2>
+<h1 id="4.-XAI-with-Machine-Learning">4. XAI with Machine Learning<a class="anchor-link" href="#4.-XAI-with-Machine-Learning">¶</a></h1><h2 id="4.1.--RandomForest-Model">4.1.  RandomForest Model<a class="anchor-link" href="#4.1.--RandomForest-Model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -13954,7 +13988,7 @@ test_x: (1050, 37), test_y: (1050,)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.2.-SHAP">3.2. SHAP<a class="anchor-link" href="#3.2.-SHAP">¶</a></h2><p><strong>SHAP Implementation</strong></p>
+<h2 id="4.2.-SHAP">4.2. SHAP<a class="anchor-link" href="#4.2.-SHAP">¶</a></h2><p><strong>SHAP Implementation</strong></p>
 
 </div>
 </div>
@@ -14070,7 +14104,7 @@ Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.8/dist-pac
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="4.-XAI-with-Deep-Learning">4. XAI with Deep Learning<a class="anchor-link" href="#4.-XAI-with-Deep-Learning">¶</a></h1><h2 id="4.1.-ANN-Model">4.1. ANN Model<a class="anchor-link" href="#4.1.-ANN-Model">¶</a></h2>
+<h1 id="5.-XAI-with-Deep-Learning">5. XAI with Deep Learning<a class="anchor-link" href="#5.-XAI-with-Deep-Learning">¶</a></h1><h2 id="5.1.-ANN-Model">5.1. ANN Model<a class="anchor-link" href="#5.1.-ANN-Model">¶</a></h2>
 </div>
 </div>
 </div>
@@ -14380,7 +14414,7 @@ Epoch 50/50
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.2.-SHAP">4.2. SHAP<a class="anchor-link" href="#4.2.-SHAP">¶</a></h2>
+<h2 id="5.2.-SHAP">5.2. SHAP<a class="anchor-link" href="#5.2.-SHAP">¶</a></h2>
 </div>
 </div>
 </div>
@@ -14399,7 +14433,8 @@ Epoch 50/50
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">shap</span>
 
-<span class="n">explainer_shap</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">DeepExplainer</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">train_x</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
+<span class="n">explainer_shap</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">DeepExplainer</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span> 
+                                    <span class="n">data</span> <span class="o">=</span> <span class="n">train_x</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
 <span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer_shap</span><span class="o">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">test_x</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
 </pre></div>
 
@@ -14441,7 +14476,8 @@ Your TensorFlow version is newer than 2.4.0 and so graph support has been remove
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">test_x</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shap</span><span class="o">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">test_x</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> 
+                  <span class="n">feature_names</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14494,10 +14530,10 @@ Your TensorFlow version is newer than 2.4.0 and so graph support has been remove
 
 
 
-<div id="70ec884b-0f50-4c33-883a-f6c2b18cadfd"></div>
+<div id="58b14e6f-bd93-45c6-9c35-de7ed75a25a6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#70ec884b-0f50-4c33-883a-f6c2b18cadfd');
+var element = $('#58b14e6f-bd93-45c6-9c35-de7ed75a25a6');
 $.getScript('https://kmahelona.github.io/ipython_notebook_goodies/ipython_notebook_toc.js')
 
 </script>
